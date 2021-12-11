@@ -3,5 +3,82 @@
 }
 
 .navbar{
-    background-color: #000000;
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 0;
+}
+
+.search_bar_container{
+    position: relative;
+}
+
+.seach_bar{
+    position: relative;
+}
+
+.suggestion_ul, .suggestion_ul_one_height{
+    list-style: none;
+    border: 1px solid #ccc;
+    padding: 0;
+    background-color: #141414;
+    
+}
+
+.suggestion_ul_one_height{
+    overflow-y: hidden;
+    border: 0 solid #ccc;
+}
+
+.suggestion_ul{
+    min-height: 83px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+
+
+.suggestion_ul li, .suggestion_ul_one_height li{
+    border-bottom: 1px solid white;
+    height: 83px;
+    padding: 10px;
+    cursor : pointer;    
+}
+
+.suggestions{
+    position: absolute;
+    width: 250px;
+}
+
+.suggestion_list{
+    height: 50px;
+}
+
+.suggestion_img{
+    width: 43px;
+    height: 63px;
+    float: left;
+    margin-right: 15px;
+}
+
+.suggestion_title{
+    font-weight: 700;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.suggestion_year{
+    color: #919191;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.suggestion_link{
+    text-decoration: none;
+}
+
+@media (max-width : 600px) {
+    .brand-image{
+        width: 50px;
+        height: 30px;
+    }
 }

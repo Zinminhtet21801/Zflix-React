@@ -7,30 +7,37 @@ const responsive = {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 10,
+    slidesToSlide: 3,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1440 },
     items: 10,
+    slidesToSlide: 3,
   },
   desktop2: {
     breakpoint: { max: 1440, min: 1206 },
     items: 8,
+    slidesToSlide: 3,
   },
   tablet: {
     breakpoint: { max: 1206, min: 894 },
     items: 6,
+    slidesToSlide: 3,
   },
   tablet2: {
     breakpoint: { max: 894, min: 726 },
     items: 5,
+    slidesToSlide: 3,
   },
   tablet3: {
     breakpoint: { max: 726, min: 574 },
     items: 4,
+    slidesToSlide: 3,
   },
   mobile: {
     breakpoint: { max: 574, min: 432 },
     items: 3,
+    slidesToSlide: 3,
   },
   mobile2: {
     breakpoint: { max: 432, min: 300 },
@@ -43,18 +50,25 @@ const responsive = {
 };
 
 const Poster = (props) => {
-  console.log(props.inComingMovies);
-
   return (
-    <Carousel responsive={responsive} swipeable={false} draggable={false} className={classes.container}>
+    <Carousel
+      responsive={responsive}
+      swipeable={false}
+      draggable={false}
+      className={classes.container}
+    >
       {props.inComingMovies.map((movie) => {
         return (
-            <img
-              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-              alt={movie.original_title}
-              className={`${classes.image}`}
-              key={movie.id}
-            />
+          <img
+            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+            alt={movie.original_title}
+            className={`${classes.image}`}
+            key={movie.id}
+            onClick={() => {
+              props.onOpenModal();
+              props.movieID(movie.id);
+            }}
+          />
         );
       })}
     </Carousel>

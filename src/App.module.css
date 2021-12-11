@@ -1,5 +1,18 @@
 .movieHeader{
     margin: 10px;
     color: #ccc;
-    display: inline;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-left: 30px;
 }
+
+.page_movie_div{
+    position: relative;
+}
+
+.topHeader{
+    position: relative;
+    /* top: 25px; */
+}
+
+

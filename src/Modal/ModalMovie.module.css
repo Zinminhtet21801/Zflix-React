@@ -1,0 +1,51 @@
+.no_movie_found_div{
+    width: 100%;
+}
+
+.movie_text_color{
+    color: white;
+    margin: 20px 0;
+}
+
+.no_movie_found_div p{
+    color: #ccc;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.overview span{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.released_detail span{
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.media_player div iframe{
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.cast_name{
+    font-size: 18px;
+}
+
+.description_title{
+    font-size:14px;
+    color: #BEBBB6;
+}
+
+.container{
+    margin: 20px;
+    width: 100%;
+}
+
+.modalRow{
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    overflow-x: hidden;
+    scrollbar-width: unset;
+}
