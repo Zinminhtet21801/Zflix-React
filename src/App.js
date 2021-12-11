@@ -36,30 +36,30 @@ function App() {
   }
 
   let showBanner =
-    movies.length > 0 &&
-    movies[1].data.results.length > 0 &&
+    movies?.length > 0 &&
+    movies[1]?.data?.results?.length > 0 &&
     (
     sessionStorage.getItem("randomMovieIndex") === null &&
       sessionStorage.setItem(
         "randomMovieIndex",
-        Math.floor(Math.random() * (movies[1].data.results.length -1 + 1) + 0)
+        Math.floor(Math.random() * (movies[1]?.data?.results?.length -1 + 1) + 0)
       ) + 0,
       randomMovie = sessionStorage.getItem("randomMovieIndex"),
     (
       <Banner
-        inComingMovies={movies[1].data.results[randomMovie]}
+        inComingMovies={movies[1]?.data?.results[randomMovie]}
         onOpenModal={showModalHandler}
         onCloseModal={hideModalHandler}
         movieID={movieIDHandler}
       />
     ));
 
-  let showPopularCarousel = movies.length > 0 &&
-    movies[1].data.results.length > 0 && (
+  let showPopularCarousel = movies?.length > 0 &&
+    movies[1]?.data?.results?.length > 0 && (
       <div className={classes.poster__div}>
         <h2 className={classes.movieHeader}>Popular</h2>
         <Poster
-          inComingMovies={movies[1].data.results}
+          inComingMovies={movies[1]?.data?.results}
           onOpenModal={showModalHandler}
           onCloseModal={hideModalHandler}
           movieID={movieIDHandler}
@@ -67,12 +67,12 @@ function App() {
       </div>
     );
 
-  let showLatestCarousel = movies.length > 0 &&
-    movies[1].data.results.length > 0 && (
+  let showLatestCarousel = movies?.length > 0 &&
+    movies[1]?.data?.results?.length > 0 && (
       <div className={classes.poster__div}>
         <h2 className={classes.movieHeader}>Top Rated</h2>
         <Poster
-          inComingMovies={movies[0].data.results}
+          inComingMovies={movies[0]?.data.results}
           onOpenModal={showModalHandler}
           onCloseModal={hideModalHandler}
           movieID={movieIDHandler}
@@ -80,14 +80,14 @@ function App() {
       </div>
     );
   let showUpcomingCarousel;
-  if (movies.length > 0) {
+  if (movies?.length > 0) {
     showUpcomingCarousel = (
       <div className={classes.poster__div}>
         <h2 className={`${classes.movieHeader} ${classes.topHeader}`}>
           Upcoming
         </h2>
         <Poster
-          inComingMovies={movies[2].data.results}
+          inComingMovies={movies[2]?.data?.results}
           onOpenModal={showModalHandler}
           onCloseModal={hideModalHandler}
           movieID={movieIDHandler}
@@ -106,11 +106,11 @@ function App() {
         />
       )}
       <NavBarHeader />
-      {movies.length > 0 && showBanner}
+      {movies?.length > 0 && showBanner}
       <div className={classes.page_movie_div}>
-        {movies.length > 0 && showUpcomingCarousel}
-        {movies.length > 0 && showPopularCarousel}
-        {movies.length > 0 && showLatestCarousel}
+        {movies?.length > 0 && showUpcomingCarousel}
+        {movies?.length > 0 && showPopularCarousel}
+        {movies?.length > 0 && showLatestCarousel}
       </div>
       {/* {showPopularCarousel}
       {showLatestCarousel} */}
